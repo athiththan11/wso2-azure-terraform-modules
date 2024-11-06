@@ -21,6 +21,7 @@ resource "azurerm_monitor_scheduled_query_rules_alert" "scheduled_query_rules_al
   severity            = each.value.severity
   frequency           = each.value.frequency
   time_window         = each.value.time_window
+  tags                = var.tags
 
   action {
     action_group = each.value.action_group_id_list
@@ -51,6 +52,7 @@ resource "azurerm_monitor_scheduled_query_rules_alert" "count_trigger_scheduled_
   severity            = each.value.severity
   frequency           = each.value.frequency
   time_window         = each.value.time_window
+  tags                = var.tags
 
   action {
     action_group = each.value.action_group_id_list
